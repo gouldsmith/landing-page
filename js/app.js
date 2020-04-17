@@ -62,10 +62,12 @@ for (let i = 0; i < things.length; i++) {
 }
 console.log(nodeArray);
 
+// Add your-active-class to section in viewport
+
 const sections = document.querySelectorAll("section");
 const activeLink = document.querySelectorAll('a');
 
-function makeActive() {
+function makeSectionActive() {
   for (const section of sections) {
     const box = section.getBoundingClientRect();
     if (box.top <= 150 && box.bottom >= 150) {
@@ -77,10 +79,14 @@ function makeActive() {
   }
 }
 
+// Add active class to nav links
+
 function makeLinkActive() {
+  // TODO: refactor this section to use makeSectionActive()
   for (const section2 of sections) {
     const box = section2.getBoundingClientRect();
     if (box.top <= 150 && box.bottom >= 150) {
+
       const activeNavLink = section2.id;
       console.log(`section2.id = ${section2.id}`);
       console.log(`activeNavLink = ${activeNavLink}`);
@@ -89,26 +95,25 @@ function makeLinkActive() {
       const getSectionNumber = activeNavLink.match(sectionNumberRegex);
       const extractNumber = getSectionNumber[0];
       console.log(`sup ${extractNumber}`);
-      // Find id
+  
       const findId = document.querySelector(`#link${extractNumber}`);
-      // add active class
       findId.classList.add("active");
 
     } else {
-      // Adding the same code after the else statment, as `findId` was undefined. It works 2 lines above. Looking for feedback on this section. 
+      // TODO: refactor to reuse code from if statement
       const activeNavLink = section2.id;
       const sectionNumberRegex = /[\d]/;
       const getSectionNumber = activeNavLink.match(sectionNumberRegex);
       const extractNumber = getSectionNumber[0];
       const findId = document.querySelector(`#link${extractNumber}`);
-      // variable scope issues? 
+
       findId.classList.remove("active");
     }
   }
 }
 
 document.addEventListener("scroll", function () {
-  makeActive(sections);
+  makeSectionActive(sections);
   makeLinkActive();
 });
 
@@ -118,9 +123,6 @@ document.addEventListener('click', function() {
   const navItems = document.querySelectorAll('a');
   navItems.scrollIntoView({ behavior: 'smooth', block: 'nearest'});
 });
-
-
-
 
 /**
  * End Main Functions
