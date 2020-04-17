@@ -40,6 +40,7 @@ window.addEventListener("load", (event) => {
 
 // 2. create variable for sections
 
+
 const sectionResults = document.querySelectorAll(".landing__container");
 document.getElementsByClassName("landing__container");
 
@@ -94,8 +95,7 @@ function makeLinkActive() {
       findId.classList.add("active");
 
     } else {
-      // repeating shit on repeating shit
-      // why does this work? 
+      // Adding the same code after the else statment, as `findId` was undefined. It works 2 lines above. Looking for feedback on this section. 
       const activeNavLink = section2.id;
       const sectionNumberRegex = /[\d]/;
       const getSectionNumber = activeNavLink.match(sectionNumberRegex);
