@@ -14,14 +14,14 @@ body {
     background: rgb(136,203,171);
     background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
     margin: 0;
-    font-family: 'Merriweather', serif;
+    font-family: 'Work Sans', Helvetica, sans-serif;
     color: #fff;
 }
 
 
 /* Typeography General*/
 h1 {
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Space Mono', monospace;
     font-size: 3em;
     margin: 2em 1rem;
 }
@@ -35,7 +35,7 @@ h1 {
 
 h2 {
     border-bottom: 1px solid #cc1;
-    font-family: 'Oxygen', Sans-Serif;
+    font-family: 'Space Mono', monospace;
     font-size: 3em;
     color: #fff;
 }
@@ -221,3 +221,7 @@ section.your-active-class .landing__container::after {
 		           rotate(-360deg);
 	}
 }
+.navbar__menu ul {
+    color: black;
+}
+
