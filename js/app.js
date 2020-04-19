@@ -55,7 +55,7 @@ for (let i = 0; i < things.length; i++) {
   const addSection = document.createElement("a");
   addSection.setAttribute("href", `#section${i + 1}`);
   addSection.setAttribute("id", `link${i + 1}`);
-  addSection.textContent = `Section ${i + 1}`;
+  addSection.textContent = `Section ${i + 1} `;
   existingNav = document.querySelector("#navbar__list");
   existingNav.appendChild(addSection);
   console.log(addSection);
